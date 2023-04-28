@@ -117,6 +117,26 @@
   <build>
     <plugins>
       <plugin>
+        <groupId>org.sonatype.plugins</groupId>
+        <artifactId>nxrm3-maven-plugin</artifactId>
+        <!-- replace plugin version with the latest available -->
+        <!-- https://search.maven.org/search?q=a:nxrm3-maven-plugin -->
+        <version>1.0.3</version>
+        <extensions>true</extensions>
+        <configuration>
+          <nexusUrl>http://${NEXUS_SERVER}:8081</nexusUrl>
+          
+          <!-- The server "id" element from settings to use authentication from settings.xml-->
+          <serverId>local-nexus</serverId>
+          
+          <!-- Which repository to deploy to -->
+          <repository>maven-releases</repository>
+          
+          <!-- Skip the staging deploy mojo -->
+          <skipNexusStagingDeployMojo>true</skipNexusStagingDeployMojo>
+        </configuration>
+      </plugin>
+      <plugin>
         <groupId>io.spring.javaformat</groupId>
         <artifactId>spring-javaformat-maven-plugin</artifactId>
         <version>${spring-format.version}</version>
@@ -406,5 +426,15 @@
       </build>
     </profile>
   </profiles>
-
+  <distributionManagement>
+    <repository>
+        <id>local-nexus</id>
+        <url>http://${NEXUS_SERVER}:8081/repository/maven-releases/</url>
+    </repository>
+        <snapshotRepository>
+        <id>local-nexus-snap</id>
+        <url>http://${NEXUS_SERVER}:8081/repository/maven-snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
+  
 </project>
