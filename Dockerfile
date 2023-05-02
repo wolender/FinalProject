@@ -4,5 +4,5 @@ WORKDIR /usr/src/petclinic
 COPY target/*.jar /usr/src/petclinic/
 RUN chmod 777 *.jar
 EXPOSE 8080
-CMD ["java","-jar","spring-petclinic*.jar"]
+CMD ["java","-jar","spring-petclinic-3.0.0-SNAPSHOT.jar"]
 
