@@ -287,6 +287,15 @@
         <enabled>false</enabled>
       </snapshots>
     </repository>
+    <repository>
+      <id>local-nexus</id>
+      <url>http://${NEXUS_SERVER}:8081/repository/maven-releases/</url>
+    </repository>
+
+    <repository>
+      <id>local-nexus-snap</id>
+      <url>http://${NEXUS_SERVER}:8081/repository/maven-snapshots/</url>
+    </repository>
   </repositories>
 
   <pluginRepositories>
