@@ -16,9 +16,9 @@
 $icon-font-path:    "../../webjars/bootstrap/fonts/";
 
 $spring-green:      $ENV_COLOR;
-$spring-dark-green: #5fa134;
-$spring-brown:      #34302D;
-$spring-grey:       #838789;
+$spring-dark-green: $ENV_COLOR;
+$spring-brown:      $ENV_COLOR;
+$spring-grey:       $ENV_COLOR;
 $spring-light-grey: $ENV_COLOR;
 
 $body-bg:                           $spring-light-grey;

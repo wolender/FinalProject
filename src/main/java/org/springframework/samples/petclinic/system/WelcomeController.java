@@ -24,7 +24,9 @@ class WelcomeController {
 
 	@GetMapping("/")
 	public String welcome() {
-		return "welcome";
+		String username = System.getenv("ENV_NAME");
+		String returnVal = username + " welcome";
+		return returnVal;
 	}
 
 }
